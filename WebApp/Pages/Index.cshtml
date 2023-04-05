@@ -1,0 +1,13 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+@if(User.Identity.IsAuthenticated)
+{
+        <a href="/Tasks">Go to Tasks Management</a>
+}
+else {
+        <a asp-area="MicrosoftIdentity" asp-controller="Account" asp-action="SignIn">Sign in</a>
+}
