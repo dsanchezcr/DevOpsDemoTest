@@ -14,14 +14,18 @@
       "launchBrowser": true,
       "applicationUrl": "https://localhost:7285;http://localhost:5033",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "VaultUri": "https://devopsdemotestvault.vault.azure.net/",
+        "AZURE_USERNAME": "dsanchez@xpirit.com"
       }
     },
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "VaultUri": "https://devopsdemotestvault.vault.azure.net/",
+        "AZURE_USERNAME": "dsanchez@xpirit.com"
       }
     }
   }

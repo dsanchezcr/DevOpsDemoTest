@@ -4,7 +4,7 @@
     ViewData["Title"] = "Home";
 }
 
-@if(User.Identity.IsAuthenticated)
+@if(User.Identity?.IsAuthenticated == true)
 {
         <a href="/Tasks">Go to Tasks Management</a>
 }

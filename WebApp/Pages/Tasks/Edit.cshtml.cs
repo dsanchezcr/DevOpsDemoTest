@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using WebApp.Data;
 using WebApp.Models;
 
 namespace WebApp.Pages.Tasks
 {
+    [Authorize]
     public class EditModel : PageModel
     {
         private readonly WebApp.Data.Context _context;
@@ -38,7 +34,6 @@ namespace WebApp.Pages.Tasks
             Item = item;
             return Page();
         }
-
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
@@ -68,7 +63,6 @@ namespace WebApp.Pages.Tasks
 
             return RedirectToPage("./Index");
         }
-
         private bool ItemExists(int id)
         {
           return (_context.Item?.Any(e => e.Id == id)).GetValueOrDefault();
